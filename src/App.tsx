@@ -160,7 +160,7 @@ function Home() {
       <section className="relative h-dvh w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/hero.jpg" 
+            src="/images/hero.avif" 
             alt="Wedding Background" 
             className="w-full h-full object-cover force-grayscale"
             referrerPolicy="no-referrer"
@@ -227,7 +227,7 @@ function Home() {
             className="aspect-[3/4] w-full md:w-1/3 overflow-hidden bg-white/5"
           >
             <img 
-              src="/images/preview-1.jpg" 
+              src="/images/preview-1.png" 
               alt="Wedding preview"
               className="w-full h-full object-cover force-grayscale hover:scale-105 transition-transform duration-1000"
             />
@@ -259,7 +259,7 @@ function Gallery() {
 
   const images = Array.from({ length: 6 }, (_, i) => ({
     id: i,
-    src: `/images/gallery-${i + 1}.jpg`,
+    src: `/images/gallery-${i + 1}.png`,
   }));
 
   const handlePrev = (e: React.MouseEvent) => {
@@ -403,7 +403,7 @@ function About() {
         >
           <div className="w-[280px] h-[280px] rounded-full overflow-hidden border border-white/10 shadow-2xl">
             <img 
-              src="/images/about.jpg" 
+              src="/images/about.avif" 
               alt="Karina" 
               className="w-full h-full object-cover force-grayscale"
               referrerPolicy="no-referrer"
