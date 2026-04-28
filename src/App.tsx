@@ -266,7 +266,7 @@ function Gallery() {
 
   const images = Array.from({ length: 6 }, (_, i) => ({
     id: i,
-    src: `/images/gallery-${i + 1}.jpg`,
+    src: `/public/images/gallery-${i + 1}.jpg`,
   }));
 
   const handlePrev = (e: React.MouseEvent) => {
