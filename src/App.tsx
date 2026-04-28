@@ -160,7 +160,7 @@ function Home() {
       <section className="relative h-dvh w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="./public/images/hero.jpg" 
+            src="/images/hero.jpg" 
             alt="Wedding Background" 
             className="w-full h-full object-cover force-grayscale"
             referrerPolicy="no-referrer"
@@ -266,7 +266,7 @@ function Gallery() {
 
   const images = Array.from({ length: 6 }, (_, i) => ({
     id: i,
-    src: `/public/images/gallery-${i + 1}.jpg`,
+    src: `/images/gallery-${i + 1}.jpg`,
   }));
 
   const handlePrev = (e: React.MouseEvent) => {
