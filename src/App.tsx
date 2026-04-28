@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -21,8 +22,11 @@ function Layout({ children }: { children: React.ReactNode }) {
     const titleMap: { [key: string]: string } = {
       "/": "Karina",
       "/index.html": "Karina",
+      "/gallery": "Gallery — Karina",
       "/gallery.html": "Gallery — Karina",
+      "/about": "About — Karina",
       "/about.html": "About — Karina",
+      "/contact": "Contact — Karina",
       "/contact.html": "Contact — Karina",
     };
     document.title = titleMap[pathname] || "Karina Photography";
@@ -60,7 +64,7 @@ function Layout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen bg-black font-dmsans text-white selection:bg-white selection:text-black">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-8 py-6 md:px-16 mix-blend-difference">
-        <Link to="/index.html" className="text-2xl font-viaoda tracking-tighter hover:opacity-70 transition-opacity">
+        <Link to="/" className="text-2xl font-viaoda tracking-tighter hover:opacity-70 transition-opacity">
           KARINA
         </Link>
 
@@ -240,7 +244,7 @@ function Home() {
           className="mt-20 text-center"
         >
           <Link 
-            to="/gallery.html" 
+            to="/gallery" 
             className="inline-block border-b border-white pb-1 text-xs uppercase tracking-[0.4em] transition-opacity hover:opacity-50"
           >
             Explore Full Gallery
@@ -333,7 +337,7 @@ function Gallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-12 mb-reverse"
+            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-12"
             onClick={() => setSelectedImage(null)}
           >
             {/* Close Button */}
