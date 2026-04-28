@@ -220,16 +220,16 @@ function Home() {
 
         <div className="flex justify-center">
           <motion.div
-            initial={{ opacity: 0, scale: 1.05 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="aspect-[3/4] w-full md:w-1/3 overflow-hidden bg-white/5"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="aspect-[3/4] w-full md:w-1/2 overflow-hidden bg-white/5 border border-white/10"
           >
             <img 
-              src="/images/preview-1.png" 
+              src="/images/preview-1.jpg" 
               alt="Wedding preview"
-              className="w-full h-full object-cover force-grayscale hover:scale-105 transition-transform duration-1000"
+              className="w-full h-full object-cover grayscale transition-all duration-1000 hover:grayscale-0"
+              referrerPolicy="no-referrer"
             />
           </motion.div>
         </div>
@@ -259,7 +259,7 @@ function Gallery() {
 
   const images = Array.from({ length: 6 }, (_, i) => ({
     id: i,
-    src: `/images/gallery-${i + 1}.png`,
+    src: `/images/gallery-${i + 1}.jpg`,
   }));
 
   const handlePrev = (e: React.MouseEvent) => {
