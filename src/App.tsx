@@ -160,7 +160,7 @@ function Home() {
       <section className="relative h-dvh w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=2000" 
+            src="./pictures/hero.jpg" 
             alt="Wedding Background" 
             className="w-full h-full object-cover force-grayscale"
             referrerPolicy="no-referrer"
@@ -220,9 +220,9 @@ function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
           {[
-            "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800",
-            "https://images.unsplash.com/photo-1522673607200-1648832cee98?auto=format&fit=crop&q=80&w=800",
-            "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=800"
+            "./pictures/gallery-1.jpg",
+            "./pictures/preview-1.jpg",
+            "./pictures/gallery-3.jpg"
           ].map((src, index) => (
             <motion.div
               key={index}
@@ -264,9 +264,9 @@ function Home() {
 function Gallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  const images = Array.from({ length: 12 }, (_, i) => ({
+  const images = Array.from({ length: 6 }, (_, i) => ({
     id: i,
-    src: `https://picsum.photos/seed/${i + 101}/800/${i % 2 === 0 ? 1200 : 800}`,
+    src: `./pictures/gallery-${i + 1}.jpg`,
   }));
 
   const handlePrev = (e: React.MouseEvent) => {
@@ -410,7 +410,7 @@ function About() {
         >
           <div className="w-[280px] h-[280px] rounded-full overflow-hidden border border-white/10 shadow-2xl">
             <img 
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800" 
+              src="./pictures/about.jpg" 
               alt="Karina" 
               className="w-full h-full object-cover force-grayscale"
               referrerPolicy="no-referrer"
