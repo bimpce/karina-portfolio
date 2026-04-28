@@ -160,7 +160,7 @@ function Home() {
       <section className="relative h-dvh w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/hero.jpg" 
+            src="./public/images/hero.jpg" 
             alt="Wedding Background" 
             className="w-full h-full object-cover force-grayscale"
             referrerPolicy="no-referrer"
