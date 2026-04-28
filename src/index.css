@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --font-viaoda: "Viaoda Libre", serif;
+  --font-pinyon: "Pinyon Script", cursive;
+  --font-dmsans: "DM Sans", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white selection:bg-white selection:text-black;
+  }
+}
+
+.grayscale-hover {
+  @apply grayscale transition-all duration-700 hover:grayscale-0;
+}
+
+/* Force grayscale for gallery images as requested */
+.force-grayscale {
+  filter: grayscale(100%);
+}
