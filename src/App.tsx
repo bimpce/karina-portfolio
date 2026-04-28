@@ -218,27 +218,20 @@ function Home() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-          {[
-            "/images/gallery-1.jpg",
-            "/images/preview-1.jpg",
-            "/images/gallery-3.jpg"
-          ].map((src, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 1.05 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: index * 0.2, duration: 1.2, ease: "easeOut" }}
-              className="aspect-[3/4] overflow-hidden bg-white/5"
-            >
-              <img 
-                src={src} 
-                alt="Wedding preview"
-                className="w-full h-full object-cover force-grayscale hover:scale-105 transition-transform duration-1000"
-              />
-            </motion.div>
-          ))}
+        <div className="flex justify-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 1.05 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="aspect-[3/4] w-full md:w-1/3 overflow-hidden bg-white/5"
+          >
+            <img 
+              src="/images/preview-1.jpg" 
+              alt="Wedding preview"
+              className="w-full h-full object-cover force-grayscale hover:scale-105 transition-transform duration-1000"
+            />
+          </motion.div>
         </div>
 
         <motion.div 
