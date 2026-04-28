@@ -45,15 +45,15 @@ function Layout({ children }: { children: React.ReactNode }) {
   };
 
   const navLinks = [
-    { name: "Home", path: "/index.html" },
-    { name: "Gallery", path: "/gallery.html" },
-    { name: "About", path: "/about.html" },
-    { name: "Contact", path: "/contact.html" },
+    { name: "Home", path: "/" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" },
   ];
 
   const isHighlighted = (path: string) => {
-    if (path === "/index.html" && (pathname === "/" || pathname === "/index.html")) return true;
-    return pathname === path;
+    if (path === "/" && (pathname === "/" || pathname === "/index.html")) return true;
+    return pathname === path || pathname === `${path}.html`;
   };
 
   return (
@@ -158,14 +158,13 @@ function Home() {
     >
       {/* Hero Section */}
       <section className="relative h-dvh w-full flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 bg-neutral-900">
           <img 
-            src="/images/hero.avif" 
+            src={`${import.meta.env.BASE_URL}images/hero.avif`} 
             alt="Wedding Background" 
-            className="w-full h-full object-cover force-grayscale"
-            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover force-grayscale opacity-60"
           />
-          <div className="absolute inset-0 bg-black/65" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
 
         <motion.div 
@@ -223,13 +222,12 @@ function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="aspect-[3/4] w-full md:w-1/2 overflow-hidden bg-white/5 border border-white/10"
+            className="aspect-[3/4] w-full md:w-1/2 overflow-hidden bg-neutral-900 border border-white/10"
           >
             <img 
-              src="/images/preview-1.jpg" 
+              src={`${import.meta.env.BASE_URL}images/preview-1.jpg`} 
               alt="Wedding preview"
               className="w-full h-full object-cover grayscale transition-all duration-1000 hover:grayscale-0"
-              referrerPolicy="no-referrer"
             />
           </motion.div>
         </div>
@@ -259,7 +257,7 @@ function Gallery() {
 
   const images = Array.from({ length: 6 }, (_, i) => ({
     id: i,
-    src: `/images/gallery-${i + 1}.jpg`,
+    src: `${import.meta.env.BASE_URL}images/gallery-${i + 1}.jpg`,
   }));
 
   const handlePrev = (e: React.MouseEvent) => {
@@ -314,13 +312,14 @@ function Gallery() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ delay: (index % 3) * 0.1, duration: 0.8 }}
-            className="relative cursor-pointer group break-inside-avoid overflow-hidden"
+            className="relative cursor-pointer group break-inside-avoid overflow-hidden bg-neutral-900 min-h-[300px]"
             onClick={() => setSelectedImage(index)}
           >
             <img
               src={img.src}
               alt={`Gallery image ${index + 1}`}
               className="w-full h-auto force-grayscale hover:opacity-80 transition-opacity duration-700"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors pointer-events-none" />
           </motion.div>
@@ -403,10 +402,9 @@ function About() {
         >
           <div className="w-[280px] h-[280px] rounded-full overflow-hidden border border-white/10 shadow-2xl">
             <img 
-              src="/images/about.avif" 
+              src={`${import.meta.env.BASE_URL}images/about.avif`} 
               alt="Karina" 
               className="w-full h-full object-cover force-grayscale"
-              referrerPolicy="no-referrer"
             />
           </div>
         </motion.div>
@@ -563,11 +561,14 @@ export default function App() {
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/index.html" element={<Home />} />
-          <Route path="/gallery.html" element={<Gallery />} />
-          <Route path="/about.html" element={<About />} />
-          <Route path="/contact.html" element={<Contact />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/index.html" element={<Home />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/gallery.html" element={<Gallery />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/about.html" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/contact.html" element={<Contact />} />
         </Routes>
       </Layout>
     </Router>
