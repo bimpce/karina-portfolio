@@ -160,7 +160,7 @@ function Home() {
       <section className="relative h-dvh w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="./images/hero.jpg" 
+            src="/images/hero.jpg" 
             alt="Wedding Background" 
             className="w-full h-full object-cover force-grayscale"
             referrerPolicy="no-referrer"
@@ -220,9 +220,9 @@ function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
           {[
-            "./images/gallery-1.jpg",
-            "./images/preview-1.jpg",
-            "./images/gallery-3.jpg"
+            "/images/gallery-1.jpg",
+            "/images/preview-1.jpg",
+            "/images/gallery-3.jpg"
           ].map((src, index) => (
             <motion.div
               key={index}
@@ -266,7 +266,7 @@ function Gallery() {
 
   const images = Array.from({ length: 6 }, (_, i) => ({
     id: i,
-    src: `./images/gallery-${i + 1}.jpg`,
+    src: `/images/gallery-${i + 1}.jpg`,
   }));
 
   const handlePrev = (e: React.MouseEvent) => {
@@ -410,7 +410,7 @@ function About() {
         >
           <div className="w-[280px] h-[280px] rounded-full overflow-hidden border border-white/10 shadow-2xl">
             <img 
-              src="./images/about.jpg" 
+              src="/images/about.jpg" 
               alt="Karina" 
               className="w-full h-full object-cover force-grayscale"
               referrerPolicy="no-referrer"
