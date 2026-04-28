@@ -160,9 +160,10 @@ function Home() {
       <section className="relative h-dvh w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="./images/hero.jpg" 
+            src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=2000" 
             alt="Wedding Background" 
             className="w-full h-full object-cover force-grayscale"
+            referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-black/65" />
         </div>
@@ -219,9 +220,9 @@ function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
           {[
-            "./images/preview-1.jpg",
-            "./images/preview-2.jpg",
-            "./images/preview-3.jpg"
+            "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1522673607200-1648832cee98?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=800"
           ].map((src, index) => (
             <motion.div
               key={index}
@@ -265,7 +266,7 @@ function Gallery() {
 
   const images = Array.from({ length: 12 }, (_, i) => ({
     id: i,
-    src: `./images/gallery-${i + 1}.jpg`,
+    src: `https://picsum.photos/seed/${i + 101}/800/${i % 2 === 0 ? 1200 : 800}`,
   }));
 
   const handlePrev = (e: React.MouseEvent) => {
@@ -409,9 +410,10 @@ function About() {
         >
           <div className="w-[280px] h-[280px] rounded-full overflow-hidden border border-white/10 shadow-2xl">
             <img 
-              src="./images/about.jpg" 
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800" 
               alt="Karina" 
               className="w-full h-full object-cover force-grayscale"
+              referrerPolicy="no-referrer"
             />
           </div>
         </motion.div>
